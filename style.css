@@ -1,0 +1,37 @@
+.fas {
+  cursor: pointer;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  background: black;
+  padding: 7px;
+  border-radius: 5px;
+  color: white;
+  transition: 0.2s all ease-in-out;
+}
+
+a:hover {
+  background: tomato;
+  color: white;
+}
+
+.fa-arrow-left,
+.fa-arrow-right {
+  background: rgb(167, 167, 167);
+  padding: 12px;
+  border-radius: 50%;
+  transition: 0.15s all ease-in-out;
+}
+
+.fa-arrow-left:hover {
+  background: rgb(235, 84, 58);
+}
+.fa-arrow-right:hover {
+    background: rgb(235, 84, 58);
+}
