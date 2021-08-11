@@ -17,9 +17,9 @@ let index = 0;
 let modelCount = models.length;
 let interval;
 let settings = {
-    duration: '2000',
-    random: false
-}
+  duration: "2000",
+  random: false,
+};
 init(settings);
 
 document.querySelector(".fa-arrow-left").addEventListener("click", () => {
@@ -31,39 +31,36 @@ document.querySelector(".fa-arrow-right").addEventListener("click", () => {
   showSlide(index);
 });
 
-document.querySelectorAll(".arrow").forEach((item)=>{
-    item.addEventListener('mouseenter',()=>{
-        clearInterval(interval);
-    })
-})
-document.querySelectorAll(".arrow").forEach((item)=>{
-    item.addEventListener('mouseleave',()=>{
-        init(settings);
-    });
+document.querySelectorAll(".arrow").forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    clearInterval(interval);
+  });
+});
+document.querySelectorAll(".arrow").forEach((item) => {
+  item.addEventListener("mouseleave", () => {
+    init(settings);
+  });
 });
 
-function init(settings){
-    let prev;
-    interval = setInterval(() => {
-        if(settings.random){
-            do{
-                index= Math.floor(Math.random() * modelCount);
-
-            }while(index==prev)
-            prev = index;
-        }else{
-            if(modelCount == index+1){
-                index = -1;
-            }
-            showSlide(index)
-            index++;
-
-        }
-        console.log(index);
-        showSlide(index);
-    }, settings.duration);
+function init(settings) {
+  let prev;
+  interval = setInterval(() => {
+    if (settings.random) {
+      do {
+        index = Math.floor(Math.random() * modelCount);
+      } while (index == prev);
+      prev = index;
+    } else {
+      if (modelCount == index + 1) {
+        index = -1;
+      }
+      showSlide(index);
+      index++;
+    }
+    console.log(index);
+    showSlide(index);
+  }, settings.duration);
 }
-
 
 function showSlide(i) {
   index = i;
